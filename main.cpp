@@ -1,46 +1,20 @@
+#include <Person.h>
+#include <Student.h>
+#include <School.h>
 #include <iostream>
-#include <string.h>
-#include <ContactBook.h>
 using namespace std;
+
 int main()
 {
-    ContactBook c(100);
-    int ch;
-    do
-    {
-        cout<<"--------------------------------------"<<endl;
-        cout<<"\t\t\t\Contact BOOK Application"<<endl;
-        cout<<"::::::::::::::: PROGRAM MENU :::::::::::::::"<<endl;
-        cout<<"0. Exit\n";
-        cout<<"1. Add a New Person"<<endl;
-        cout<<"2. Delete a Person"<<endl;
-        cout<<"3. Search about Person"<<endl;
-        cout<<"4. Edit Person"<<endl;
-        cout<<"5. Display All Saved Contacts"<<endl;
-        cout<<"Enter Your Choice  "<<endl;
-        cin>>ch;
-        system ("cls");
-        cout<<"-------------------------------------\n";
-        cout<<endl<<endl;
-        switch(ch)
-        {
-        case 1:
-            c.addContact();
-            break;
-        case 2:
-            c.deleteContact();
-            break;
-        case 3:
-            c.searchContact();
-            break;
-        case 4:
-            c.editContact();
-            break;
-        case 5:
-            c.printAll();
-            break;
-        }
-    }
-    while(ch);
+    School s("Elfairoz","Alex");
+    s.print();
+    Student p("Ahmed",22,"male","Alex","01062160382","Ahmed@gmail.com",1,3.5,"very good");
+    s.addStudent(p);
+    Student p2("Mohammed",24,"male","Cairo","0152456632","mohammed@gmail.com",2,3,"good");
+    s.addStudent(p2);
+    Student p3("Ali",25,"male","Alex","01226138012","Ali@gmail.com",3,4,"Excellent");
+    s.addStudent(p3);
+    s.studentsInformation();
+
     return 0;
 }
